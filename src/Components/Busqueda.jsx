@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
-
-
-export function Busqueda() {
+export function Busqueda() {//funcion que maneja el historial
     const [cotizaciones, Establecer_cotizaciones] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => {//Recuperamos datos de cotización
         const cotizacionesGuardadas =
             JSON.parse(localStorage.getItem("cotizacion")) || [];
         Establecer_cotizaciones(cotizacionesGuardadas);
     }, []);
 
-    const Eliminar_Cotizacion = (index) => {
+    const Eliminar_Cotizacion = (index) => {//Eliminamos cotizacón seleccionada)
         const nuevasCotizaciones = [...cotizaciones];
         nuevasCotizaciones.splice(index, 1);
         Establecer_cotizaciones(nuevasCotizaciones);
-        localStorage.setItem("cotizaciones", JSON.stringify(nuevasCotizaciones));
+        localStorage.setItem("cotizacion", JSON.stringify(nuevasCotizaciones));
     };
 
-    const Vaciar_Historial = () => {
+    const Vaciar_Historial = () => {//Limpiamos el historial de cotizaciones
         Establecer_cotizaciones([]);
         localStorage.removeItem("cotizacion");
     };
@@ -25,9 +23,10 @@ export function Busqueda() {
     return (
         <div>
             <h1 className="center separador">Ver Historial 📋</h1>
-            <div className="center div-cotizador">
+            <div className=" center div-cotizador">
                 <table>
                     <thead>
+                        {/* Tabla con las cotizaciones guardadas previamente */}
                         <tr>
                             <th>Fecha de cotización</th>
                             <th>Propiedad</th>
@@ -38,6 +37,7 @@ export function Busqueda() {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Se muestran los resultados de busqueda */}
                         {cotizaciones.map(
                             ({ fecha, propiedad, ubicacion, metros_cuadrados, poliza }, index) => (
                                 <tr key={index}>
@@ -47,7 +47,10 @@ export function Busqueda() {
                                     <td>{metros_cuadrados}</td>
                                     <td>{poliza}</td>
                                     <td>
-                                        <span className="eliminaritem" onClick={() => Eliminar_Cotizacion({ index })}>
+                                        {/* Eliminar una cotizacion a elección */}
+                                        <span
+                                            className="eliminaritem"
+                                            onClick={() => Eliminar_Cotizacion(index)}>
                                             <button>
                                                 <p>Borrar</p>
                                             </button>
@@ -55,21 +58,28 @@ export function Busqueda() {
                                     </td>
                                 </tr>
                             )
-                        )};
+                        )}
                     </tbody>
                 </table>
                 <div className="center separador">
-                    <button className="button button-outline" id="botoneshistorial" onClick={Vaciar_Historial}>
+                    {/* Borra historial de cotización */}
+                    <button
+                        onClick={Vaciar_Historial}
+                        className="button button-outline"
+                        id="botoneshistorial">
                         <p>Vaciar</p>
                     </button>
                     <span style={{ margin: "0 10px" }} />
-                    <button className="button button-outline" id="botoneshistorial" onClick={() => window.history.back()}>
+                    {/* Volver a pantalla de acciones de cotización */}
+                    <button
+                        onClick={() => window.history.back()}
+                        className="button button-outline"
+                        id="botoneshistorial">
                         <p>Volver</p>
                     </button>
                 </div>
             </div>
         </div>
     );
-};
-
+}
 export default Busqueda;

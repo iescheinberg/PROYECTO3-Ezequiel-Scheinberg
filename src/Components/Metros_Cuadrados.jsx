@@ -1,8 +1,7 @@
-
-export function Metros_Cuadrados({ inputMetrosCuadrados, setInputMetrosCuadrados }) {
+export function Metros_Cuadrados({ inputMetrosCuadrados, setInputMetrosCuadrados }) {// Ingresamos los metros cuadrados
     return (
         <div>
-            <label htmlFor="metros_cuadrados">Ingrese los m<sup>2</sup> que desee</label>
+            <label htmlFor="metros_cuadrados">Ingresa los m<sup>2</sup>:</label>
             <input
                 type="number"
                 id="metros_cuadrados"
@@ -10,7 +9,8 @@ export function Metros_Cuadrados({ inputMetrosCuadrados, setInputMetrosCuadrados
                 min="20"
                 max="500"
                 onChange={(e) => setInputMetrosCuadrados(e.target.value)}
-                required />
+                required
+            />
         </div>
     );
 }

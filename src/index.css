@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
 @import url("https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css");
 
 * {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
 }
 
 .center {
@@ -15,28 +15,28 @@ p {
 }
 
 h1 {
-  font-weight: 400;
-  color: rgb(82, 215, 21)
+  font-weight: bold;
+  color: #4180ab
 }
 
 label {
   font-weight: 400;
-  color: black;
+  color: #ffffff;
 }
 
 .div-cotizador {
   margin: auto;
   max-width: 900px;
-  background-color: rgb(34, 134, 94);
+  background-color: #4180ab;
   padding: 10px;
-  border-color: rgb(255, 255, 255);
-  box-shadow: 26px 28px 15px -8px rgba(0, 0, 0, 0.15);
-  border-radius: 0.7rem;
+  border-color: #ffffff;
+  box-shadow: 26px 28px 15px -8px #bdd1de;
+  border-radius: 1rem;
 }
 
 th {
   text-align: center;
-  color: white;
+  color: #ffffff;
 }
 
 td {
@@ -54,7 +54,8 @@ div.historial {
 }
 
 h2 {
-  color: blue;
+  color: #bdd1de;
+  font-weight: bold;
 }
 
 #botoneshistorial {
@@ -78,7 +79,7 @@ input {
 }
 
 .importe {
-  color: blueviolet;
+  color: #ffffff;
   font-size: x-large;
   font-weight: 500;
 }
@@ -93,19 +94,23 @@ input {
   display: none;
 }
 
+button {
+  background-color: #e4ebf0;
+  color: #4180ab;
+  border: 2px solid #8ab3cf;
+}
+
 button:hover {
-  color: whitesmoke !important;
-  background-color: rgb(0, 0, 0) !important;
+  color: #4180ab !important;
+  background-color: #bdd1de !important;
 }
 
 button:active {
-  background-color: black !important;
+  background-color: #bdd1de !important;
 }
 
 html {
   min-height: 100%;
-  background-color: rgb(255, 255, 255);
-  background-image: url("../src/Components/seguros.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #e4ebf0;
+
 }
