@@ -2,7 +2,7 @@
 export function Metros_Cuadrados({ inputMetrosCuadrados, setInputMetrosCuadrados }) {
     return (
         <div>
-            <label>Ingrese los m<sup>2</sup> que desee</label>
+            <label htmlFor="metros_cuadrados">Ingrese los m<sup>2</sup> que desee</label>
             <input
                 type="number"
                 id="metros_cuadrados"

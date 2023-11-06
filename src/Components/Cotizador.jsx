@@ -18,8 +18,8 @@ export function Cotizador({
         if (
             inputMetrosCuadrados >= 20 &&
             inputMetrosCuadrados <= 500 &&
-            selectPropiedad !== "..." &&
-            selectUbicacion !== "..."
+            selectPropiedad !== " - " &&
+            selectUbicacion !== " - "
         ) {
             const factorPropiedad = propiedadData.find(
                 (item) => item.tipo === selectPropiedad
