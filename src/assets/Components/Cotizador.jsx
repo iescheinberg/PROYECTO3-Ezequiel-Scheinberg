@@ -104,3 +104,5 @@ export function Cotizador({
         </>
     );
 }
+
+export default Cotizador;

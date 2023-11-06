@@ -72,4 +72,4 @@ export function Busqueda() {
     );
 };
 
-export default Busqueda
+export default Busqueda;
